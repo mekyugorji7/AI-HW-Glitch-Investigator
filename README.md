@@ -25,9 +25,12 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] **Describe the game's purpose.**  
+  The app is a Streamlit number-guessing game where players choose a difficulty, make guesses, and get higher/lower hints while tracking attempts and score.
+- [x] **Detail which bugs you found.**  
+  I found reversed hint messages, broken new-game reset behavior (game stayed in won/lost state), and test/import issues that prevented `pytest` from running cleanly.
+- [x] **Explain what fixes you applied.**  
+  I corrected `check_guess` hint direction, fixed new-game/session-state reset (`attempts`, `status`, `history`, and difficulty-based secret range), refactored logic into `logic_utils.py`, and added/updated pytest regression tests until all tests passed.
 
 ## 📸 Demo
 

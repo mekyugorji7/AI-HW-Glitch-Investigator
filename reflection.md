@@ -31,15 +31,9 @@ I decided a bug was really fixed only after I could reproduce the old behavior f
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-- What change did you make that finally gave the game a stable secret number?
-
+The secret number kept changing because of Streamlit's session_state functionality. Essentially, every time on every interaction, Streamlit reruns its session_state, which means anything that's outside of it is not protected and is able to be regenerated. Imagine every single time I press a button, I'm starting that script every single time. The session_state script is basically the memory of the system to keep track of what I've changed while I've been in the system. If it's not within session_state, then it's going to forget because it's going to wipe out everything. Imagine I'm cleaning a desk, but I put something in my pocket. That's my session_state. If it's not in my pocket, then it's not going to be there, and my session_state meaning is gone because it's missing. That's basically how it works, and the change I made was making sure that it stayed stable between guesses instead of changing unexpectedly. I reset the secret only inside the New Game Flow, so that made the game behavior way more predictable and corrected the issue.
 ---
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+I really like AI's ability to create new edge cases. I think edge cases are one of the most important things when developing new systems, because you want to make sure your system survives no matter what data is being passed through it. With AI, it is able to create more cases than you can think of. I also think it's really beneficial just in terms of looking over your entire system, ensuring you have correct syntax, you are approaching the problem correctly, and it is able to provide you feedback. You basically have a personal system every single time you code. I think that's really good and really beneficial, especially within this field of software development.
