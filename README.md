@@ -34,5 +34,6 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-- [x] [<img width="907" height="455" alt="image" src="https://github.com/user-attachments/assets/990ebe98-5278-4ae0-8606-1f2ed0fbc9a5" />
+- [x] [<img width="1497" height="859" alt="image" src="https://github.com/user-attachments/assets/be6bb4f8-4ef4-4139-a977-2ccf2344b085" />
+
 
