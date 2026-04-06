@@ -4,9 +4,10 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
-- What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start  
-  (for example: "the secret number kept changing" or "the hints were backwards").
+Game bugs:
+- The hint was wrong, I guessed 1 and told me "Go lower", 8 was the correct choice
+- Attempts not updating/reloading correctly after each guess and new game
+- Game not being playable after winning and pressing new game
 
 ---
 
@@ -16,14 +17,15 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+I utilized the GPT 5.3 Codex for this project. One example of how I used this AI was with the tests. It created its own test file when I already had one, so I had to make sure I deleted it and that tests were being written accurately. Also, since it's Python, the file path for the tests and pytest needed to be corrected. I manualy corrected that after the AI gave me the incorrect suggestion. They system also gave me the correct suggestion that the hint was backwards, so that's how I was able to fix the first bug I found.
+
+The other bug I found was that the app was not updating after each attempt. For example, after I would do one attempt, the attempt would stay frozen, so it would just lag, and then upon a new game the attempts also didn't update. I had to fix that and collaborate with it AI in order to fix it, and it correctly found the issue within the @app.py file.
+
 ---
 
 ## 3. Debugging and testing your fixes
 
-- How did you decide whether a bug was really fixed?
-- Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code.
-- Did AI help you design or understand any tests? How?
+I decided a bug was really fixed only after I could reproduce the old behavior first and then confirm it no longer happened in the app. I manually tested by winning or losing a round and pressing **New Game**, then checking that attempts reset, status went back to playing, and the game accepted guesses again. I also ran `pytest -q` and used the regression test for the hint-direction bug (`check_guess(1, 8)` should return **Too Low** with a **HIGHER** hint), which confirmed the logic now points the player in the correct direction. AI helped me design that regression test and identify where to place it, but I still had to verify imports, test file location, and assertion format myself.
 
 ---
 
